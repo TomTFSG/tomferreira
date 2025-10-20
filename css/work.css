@@ -1,0 +1,42 @@
+main {
+    top: 0; 
+    height: 100vh;
+    background-color: black;
+    overflow-y: auto;
+    z-index: 0; /* behind header/footer */
+}
+
+.work{
+    position: relative;
+    width: 80%;
+    height: 40%;
+    left: 10%;
+    margin: 10px;
+    background-color: #2f2f2f;
+    color:white;
+    border-radius: 7px;
+    display: flex;
+}
+.work h1{
+    font-family: 'RobotoMono-Bold', monospace;
+    font-size: 35px;
+    margin-top: 2%;
+}
+.work p{
+    font-family: 'RobotoMono-Regular', monospace;
+    font-size: 15px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.work-info{
+    position: relative;
+    width: 55%;
+    left: 45%;
+}
+.work-thumb{
+    position: absolute;
+    height: 90%;
+    top: 5%;
+    left: 2%;
+    border-radius: 7px;
+}
