@@ -11,8 +11,8 @@ let storedColor = [];
 let isColored = [];
 
 function preload() {
-    speaker = loadImage('../img/data/original.jpg');
-    bg = loadImage('../img/data/original.png');
+    speaker = loadImage('img/data/original.jpg');
+    bg = loadImage('./img/data/original.png');
 }
 
 function setup() {
