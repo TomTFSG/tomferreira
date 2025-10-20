@@ -12,7 +12,7 @@ let isColored = [];
 
 function preload() {
     speaker = loadImage('img/data/original.jpg');
-    bg = loadImage('img/data/original.png');
+    bg = loadImage('./img/data/original.png');
 }
 
 function setup() {
