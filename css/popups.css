@@ -1,0 +1,94 @@
+.popUp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    color: white;
+    background-color: #000000bc;
+    overflow: hidden;
+}
+.popUp-content{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 2vh 4vw;
+}
+.imgPop{
+    max-width: 90%;
+    max-height: 60vh;
+    height: auto;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    border: 2px solid aqua;
+    box-sizing: border-box;
+}
+.close{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 4%;
+    height: 8%;
+    background-color: yellow;
+    cursor: pointer;
+}
+.left{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5%;
+    height: 20%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    background-color: red;
+    cursor: pointer;
+}
+.right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 5%;
+    height: 20%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    background-color: green;
+    cursor: pointer;
+}
+.popUp-text{
+    width: 90%;
+    box-sizing: border-box;
+    margin-top: 2%;
+    font-size: 15pt;
+    background-color: rgba(128, 128, 128, 0.222);
+    font-family: RobotoMono-Regular, monospace;
+    overflow: auto; /* allow internal scroll if text is bigger than available space */
+    padding: 0.5vh 1vw;
+    border-radius: 7px;
+}
+.popUp-text p{
+    margin: 1% 1% 1% 1%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+.popUp-info{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width: 5%;
+    text-align: right;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    font-size: 12pt;
+    font-family: RobotoMono-Bold, monospace;
+}
