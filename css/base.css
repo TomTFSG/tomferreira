@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+header {
+    position: relative; /* scrolls with the page */
+    width: 100%;
+    height: 10vh; /* same as before */
+    background-color: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    gap: 8px;
+    overflow: hidden;
+    z-index: 10;
+}
+header > a > img#logo {
+    display: block;
+    height: 80%;
+    width: auto;
+    max-width: 100%;
+}
+
+#logo {
+    height: 80%; /* keeps logo size same proportionally */
+    margin: 0 15% 0 2%; /* same spacing as before */
+    filter: saturate(0%) hue-rotate(0deg) brightness(300%) contrast(100%);
+    flex-shrink: 0; /* prevents logo from resizing */
+}
+
+header a {
+    min-width:80px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'RobotoMono-Regular', monospace;
+    font-size: 14px;
+    display: block;
+}
+
+#anim{
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/anim_stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#anim:hover{
+    background-image: url('../img/anim.gif');
+}
+#game{
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/cube_stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#game:hover{
+    background-image: url('../img/cube.gif');
+}
+#web{
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/web_stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#web:hover{
+    background-image: url('../img/web.gif');
+}
+#code{
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/code_stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#code:hover{
+    background-image: url('../img/code.gif');
+}
+#draw{
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('../img/draw_stat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#draw:hover{
+    background-image: url('../img/draw.gif');
+}
+
+/* --- Footer --- */
+footer {
+    position: relative; /* stays visible */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25%;
+    z-index: 10;
+}
+footer a{
+    position: inherit;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'RobotoMono-Regular', monospace;
+    font-size: 15px;
+    display: block;
+}

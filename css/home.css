@@ -1,0 +1,52 @@
+
+/* --- Main Content --- */
+main {
+    top: 0; 
+    width: 100%;
+    background-color: black;
+    overflow-y: auto;
+    z-index: 0; /* behind header/footer */
+}
+
+
+
+/* --- Canvas --- */
+canvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* --- Bio Section --- */
+.bio {
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    height: 1055px;
+    width: 45%;
+}
+
+.bio h1, .bio p {
+    color: white;
+    font-family: 'RobotoMono-Regular', monospace;
+}
+
+.bio h1 {
+    font-family: 'RobotoMono-Bold', monospace;
+    font-size: 48px;
+    margin-top:10%;
+}
+
+.bio p {
+    font-size: 15px;
+}
+
+.bio #writing {
+    position: relative;
+    bottom: 0;
+    left: 35%;
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
