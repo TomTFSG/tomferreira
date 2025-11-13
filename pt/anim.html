@@ -50,5 +50,91 @@
         <a href="mailto:tommatiasferreira@gmail.com">Email</a>
     </footer>
     <script src="../js/logos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const workItem = document.querySelector(".work-01");
+            const popUp = document.querySelector(".popUp");
+            const closeBtn = popUp.querySelector(".close");
+            const leftBtn = popUp.querySelector(".left");
+            const rightBtn = popUp.querySelector(".right");
+            const imgCount = popUp.querySelector(".imgCount");
+            const contentContainer = popUp.querySelector(".popUp-content");
+            const textContainer = popUp.querySelector(".popUp-text p");
+
+            // ✅ Example: manually list your files for now
+            const files = [
+                "../img/work/anim/work_1/0.png",
+                "../img/work/anim/work_1/1.mp4",
+                "../img/work/anim/work_1/2.mp4",
+                "../img/work/anim/work_1/3.png",
+                "../img/work/anim/work_1/4.png"
+            ];
+
+            let currentIndex = 0;
+
+            // Function to render image/video
+            function showMedia(index) {
+                // Remove old media
+                const oldMedia = contentContainer.querySelector(".imgPop, video");
+                if (oldMedia) oldMedia.remove();
+
+                const file = files[index];
+                const ext = file.split('.').pop().toLowerCase();
+
+                let mediaEl;
+                if (["mp4", "webm", "mov"].includes(ext)) {
+                    mediaEl = document.createElement("video");
+                    mediaEl.src = file;
+                    mediaEl.classList.add("imgPop");
+                    mediaEl.controls = true;
+                    mediaEl.autoplay = true;
+                } else {
+                    mediaEl = document.createElement("img");
+                    mediaEl.src = file;
+                    mediaEl.classList.add("imgPop");
+                }
+
+                // Insert before the text section
+                contentContainer.insertBefore(mediaEl, popUp.querySelector(".popUp-text"));
+
+                textContainer.textContent = "For this project, I created a small, simple where a Hero enters a castle and confronts a Demon. I developed the look of the characters, the animations, storyboards and backgrounds. The animation was made using Toon Boon Harmony, Krita and Adobe Premiere.";
+                imgCount.textContent = `${index + 1}/${files.length}`;
+            }
+
+            // Function to open popup
+            function openPopup() {
+                popUp.style.visibility = "visible";
+                currentIndex = 0;
+                showMedia(currentIndex);
+            }
+
+            // Function to close popup
+            function closePopup() {
+                const video = contentContainer.querySelector("video");
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                popUp.style.visibility = "hidden";
+            }
+
+            // Navigation handlers
+            function next() {
+                currentIndex = (currentIndex + 1) % files.length;
+                showMedia(currentIndex);
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + files.length) % files.length;
+                showMedia(currentIndex);
+            }
+
+            // Event listeners
+            workItem.addEventListener("click", openPopup);
+            closeBtn.addEventListener("click", closePopup);
+            leftBtn.addEventListener("click", prev);
+            rightBtn.addEventListener("click", next);
+        });
+        </script>
 </body>
 </html>

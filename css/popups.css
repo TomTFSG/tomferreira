@@ -42,24 +42,28 @@
 }
 .left{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     width: 5%;
     height: 20%;
     transform: translateY(-50%);
     font-size: 3em;
-    background-color: red;
+    background-image: url('../img/arrow_left.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 .right{
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 0;
     width: 5%;
     height: 20%;
     transform: translateY(-50%);
     font-size: 3em;
-    background-color: green;
+    background-image: url('../img/arrow_right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 .popUp-text{
