@@ -1,15 +1,7 @@
-main {
-    top: 0; 
-    height: 100vh;
-    background-color: black;
-    overflow-y: auto;
-    z-index: 0; /* behind header/footer */
-}
-
 .work{
     position: relative;
     width: 80%;
-    height: 40%;
+    min-height: 40vh;
     left: 10%;
     margin: 10px;
     background-color: #2f2f2f;

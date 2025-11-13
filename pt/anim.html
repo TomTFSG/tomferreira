@@ -24,8 +24,29 @@
         <div class="work work-01">
             <img src="../img/work/anim/work_1.png" alt="Work 1" class="work-thumb">
             <div class="work-info">
-                <h1>Work 1 Title</h1>
-                <p>Work Description goes here</p>
+                <h1>Showdown</h1>
+                <p>Animação Básica e Storyboarding</p>
+            </div>
+        </div>
+        <div class="work work-02">
+            <img src="../img/work/anim/work_2.png" alt="Work 2" class="work-thumb">
+            <div class="work-info">
+                <h1>Estudos de Animação</h1>
+                <p>Testes de Animalção Simples</p>
+            </div>
+        </div>
+        <div class="work work-03">
+            <img src="../img/work/anim/work_3.png" alt="Work 2" class="work-thumb">
+            <div class="work-info">
+                <h1>All I Want Is You</h1>
+                <p>Animação de All I Want is You de Barry Louis Polisar</p>
+            </div>
+        </div>
+        <div class="work work-04">
+            <img src="../img/work/anim/work_4.jpg" alt="Work 2" class="work-thumb">
+            <div class="work-info">
+                <h1>The Black Mystery</h1>
+                <p>Adaptação em video do poema  The Black Mystery de Eugen Gomringer</p>
             </div>
         </div>
         <div class="popUp" style="visibility: hidden;">
@@ -52,7 +73,6 @@
     <script src="../js/logos.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const workItem = document.querySelector(".work-01");
             const popUp = document.querySelector(".popUp");
             const closeBtn = popUp.querySelector(".close");
             const leftBtn = popUp.querySelector(".left");
@@ -61,24 +81,56 @@
             const contentContainer = popUp.querySelector(".popUp-content");
             const textContainer = popUp.querySelector(".popUp-text p");
 
-            // ✅ Example: manually list your files for now
-            const files = [
-                "../img/work/anim/work_1/0.png",
-                "../img/work/anim/work_1/1.mp4",
-                "../img/work/anim/work_1/2.mp4",
-                "../img/work/anim/work_1/3.png",
-                "../img/work/anim/work_1/4.png"
-            ];
+            // 🧩 Define all your works here
+            const works = {
+                "work-01": {
+                    files: [
+                        "../img/work/anim/work_1/0.png",
+                        "../img/work/anim/work_1/1.mp4",
+                        "../img/work/anim/work_1/2.mov",
+                        "../img/work/anim/work_1/3.png",
+                        "../img/work/anim/work_1/4.png"
+                    ],
+                    text: "Para este projeto, criei uma curta e simples animação onde um Herói entra num castelo e confronta um Demónio. Desenvolvi o aspeto das personagens, as animações, os storyboards e os cenários. A animação foi realizada utilizando o Toon Boom Harmony, Krita e Adobe Premiere."
+                },
+                "work-02": {
+                    files: [
+                        "../img/work/anim/work_2/0.mov",
+                        "../img/work/anim/work_2/1.mov",
+                        "../img/work/anim/work_2/2.mov",
+                        "../img/work/anim/work_2/3.mp4",
+                        "../img/work/anim/work_2/4.mp4",
+                        "../img/work/anim/work_2/5.mp4"
+                    ],
+                    text: "Este projeto envolveu a criação de uma sequência de animação experimental com foco em iluminação e ritmo."
+                },
+                "work-03": {
+                    files: [
+                        "../img/work/anim/work_3/0.mp4"
+                    ],
+                    text: "Este projeto tinha como objetivo adaptar a música 'All I Want is You' de Barry Louis Polisar numa curta animação. A animação foi criada utilizando Toon Boom Harmony recorendo a rotoscoping de difrentes elementos fazendo uma montagem final em Adobe Premiere."
+                },
+                "work-04": {
+                    files: [
+                        "../img/work/anim/work_4/0.mp4",
+                        "../img/work/anim/work_4/1.jpg"
+                    ],
+                    text: "Este projeto tinha como objetivo adaptar a música 'All I Want is You' de Barry Louis Polisar numa curta animação. A animação foi criada utilizando Toon Boom Harmony recorendo a rotoscoping de difrentes elementos fazendo uma montagem final em Adobe Premiere."
+                },
+            };
 
+            let currentWork = null;
             let currentIndex = 0;
 
-            // Function to render image/video
+            // 🖼️ Function to display media (image or video)
             function showMedia(index) {
+                if (!currentWork) return;
+
                 // Remove old media
                 const oldMedia = contentContainer.querySelector(".imgPop, video");
                 if (oldMedia) oldMedia.remove();
 
-                const file = files[index];
+                const file = currentWork.files[index];
                 const ext = file.split('.').pop().toLowerCase();
 
                 let mediaEl;
@@ -97,18 +149,24 @@
                 // Insert before the text section
                 contentContainer.insertBefore(mediaEl, popUp.querySelector(".popUp-text"));
 
-                textContainer.textContent = "Para este projeto, criei uma curta e simples animação onde um Herói entra num castelo e confronta um Demónio. Desenvolvi o aspeto das personagens, as animações, os storyboards e os cenários. A animação foi realizada utilizando o Toon Boom Harmony, Krita e Adobe Premiere.";
-                imgCount.textContent = `${index + 1}/${files.length}`;
+                // Update description & counter
+                textContainer.textContent = currentWork.text;
+                imgCount.textContent = `${index + 1}/${currentWork.files.length}`;
             }
 
-            // Function to open popup
-            function openPopup() {
-                popUp.style.visibility = "visible";
+            // 🔓 Open popup for a specific work
+            function openPopup(workKey) {
+                const workData = works[workKey];
+                if (!workData) return;
+
+                currentWork = workData;
                 currentIndex = 0;
+
+                popUp.style.visibility = "visible";
                 showMedia(currentIndex);
             }
 
-            // Function to close popup
+            // 🔒 Close popup
             function closePopup() {
                 const video = contentContainer.querySelector("video");
                 if (video) {
@@ -116,21 +174,29 @@
                     video.currentTime = 0;
                 }
                 popUp.style.visibility = "hidden";
+                currentWork = null;
             }
 
-            // Navigation handlers
+            // ◀️▶️ Navigation
             function next() {
-                currentIndex = (currentIndex + 1) % files.length;
+                if (!currentWork) return;
+                currentIndex = (currentIndex + 1) % currentWork.files.length;
                 showMedia(currentIndex);
             }
 
             function prev() {
-                currentIndex = (currentIndex - 1 + files.length) % files.length;
+                if (!currentWork) return;
+                currentIndex = (currentIndex - 1 + currentWork.files.length) % currentWork.files.length;
                 showMedia(currentIndex);
             }
 
-            // Event listeners
-            workItem.addEventListener("click", openPopup);
+            // 🧠 Event Listeners
+            document.querySelectorAll(".work").forEach(workEl => {
+                workEl.addEventListener("click", () => {
+                    openPopup(workEl.classList[1]); // e.g., "work-01"
+                });
+            });
+
             closeBtn.addEventListener("click", closePopup);
             leftBtn.addEventListener("click", prev);
             rightBtn.addEventListener("click", next);

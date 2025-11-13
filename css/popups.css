@@ -34,10 +34,12 @@
 .close{
     position: absolute;
     top: 1%;
-    right: 1%;
+    right: 1.5%;
     width: 4%;
     height: 8%;
-    background-color: yellow;
+    background-image: url('../img/close.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 .left{
