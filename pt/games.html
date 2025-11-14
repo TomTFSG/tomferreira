@@ -15,7 +15,9 @@
         <a href="index.html"><img src="img/logo/logo_0.svg" id="logo" alt="Logo"/></a>
         <a href="anim.html" id="anim"></a>
         <a href="games.html" id="game"></a>
+        <!---
         <a href="web.html" id="web"></a>
+        -->
         <a href="code.html" id="code"></a>
         <a href="design.html" id="draw"></a>
         <a href="../en/anim.html">EN</a>
@@ -24,17 +26,32 @@
         <div class="work work-01">
             <img src="../img/work/game/work_1.png" alt="Work 1" class="work-thumb">
             <div class="work-info">
-                <h1>sdf</h1>
-                <p>stfu</p>
+                <h1>Legacy</h1>
+                <p>Protótipo para um Rogue-like</p>
             </div>
         </div>
+        <div class="work work-02">
+            <img src="../img/work/game/work_2.jpg" alt="Work 1" class="work-thumb">
+            <div class="work-info">
+                <h1>Dungeon</h1>
+                <p>Uma dungeon simples com iniigos</p>
+            </div>
+        </div>
+        <div class="work work-03">
+            <img src="../img/work/game/work_3.png" alt="Work 1" class="work-thumb">
+            <div class="work-info">
+                <h1>AR Game</h1>
+                <p>Jogo de realidade aumentada desenvolvido em Web.</p>
+            </div>
+        </div>
+
         <div class="popUp" style="visibility: hidden;">
             <div class="popUp-background"></div>
             <div class="popUp-content">
                 <div class="close"></div>
                 <img src="../img/work/game/work_1.png" alt="" class="imgPop">
                 <div class="popUp-text">
-                    <p>Work Description goes here jjjjjjjjjjjjjjjjjjjjjjjjjjjjggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</p>
+                    <p>Work Description goes here</p>
                     <div class="popUp-info">
                         <p class="imgCount">1/1</p>
                     </div>
@@ -63,12 +80,65 @@
             const works = {
                 "work-01": {
                     files: [
-                        "../img/work/anim/work_1/0.png",
-                        "../img/work/anim/work_1/1.mp4"
+                        "../img/work/game/work_1/0.png",
+                        "../img/work/game/work_1/1.png",
+                        "../img/work/game/work_1/2.png",
+                        "../img/work/game/work_1/3.png"
                     ],
-                    text: "Text"
+                    text: "Protótipo para um Rogue-like que explora a ideia de legado através de gerações, e geração procedural de níveis."
                 },
-
+                "work-02": {
+                    files: [
+                        "../img/work/game/work_2/0.jpg",
+                        "../img/work/game/work_2/1.jpg",
+                        "../img/work/game/work_2/2.jpg",
+                        "../img/work/game/work_2/3.jpg",
+                        "../img/work/game/work_2/4.jpg",
+                        "../img/work/game/work_2/5.jpg",
+                        "../img/work/game/work_2/6.jpg",
+                        "../img/work/game/work_2/7.jpg",
+                        "../img/work/game/work_2/8.jpg",
+                        "../img/work/game/work_2/9.jpg",
+                        "../img/work/game/work_2/10.jpg",
+                        "../img/work/game/work_2/11.jpg",
+                        "../img/work/game/work_2/12.jpg",
+                        "../img/work/game/work_2/13.jpg",
+                        "../img/work/game/work_2/14.jpg",
+                        "../img/work/game/work_2/15.jpg",
+                        "../img/work/game/work_2/16.jpg",
+                        "../img/work/game/work_2/17.jpg",
+                        "../img/work/game/work_2/18.jpg",
+                        "../img/work/game/work_2/19.jpg",
+                        "../img/work/game/work_2/20.jpg",
+                        "../img/work/game/work_2/21.jpg",
+                        "../img/work/game/work_2/22.jpg",
+                        "../img/work/game/work_2/23.jpg",
+                        "../img/work/game/work_2/24.jpg",
+                        "../img/work/game/work_2/25.jpg",
+                        "../img/work/game/work_2/26.jpg",
+                        "../img/work/game/work_2/27.jpg",
+                        "../img/work/game/work_2/28.jpg",
+                        "../img/work/game/work_2/29.jpg",
+                        "../img/work/game/work_2/30.jpg",
+                        "../img/work/game/work_2/31.jpg",
+                        "../img/work/game/work_2/32.jpg",
+                        "../img/work/game/work_2/33.jpg",
+                        "../img/work/game/work_2/34.jpg",
+                        "../img/work/game/work_2/35.jpg"
+                    ],
+                    text: "Uma dungeon criada em Rhino com inimigos simples de forma a testar level design, modelação 3D e iluminação."
+                },
+                "work-03": {
+                    files: [
+                        "../img/work/game/work_3/0.png",
+                        "../img/work/game/work_3/1.png",
+                        "../img/work/game/work_3/2.png",
+                        "../img/work/game/work_3/3.png",
+                        "../img/work/game/work_3/4.png",
+                        "../img/work/game/work_3/5.png"
+                    ],
+                    text: "Projeto de grupo desenvolvido para a cadeira de Design de Interação. Desenvolvemos um jogo de realidade aumentada em Web em que o jogador explora a sua cidade para encontrar provas que o permitem acusar um criminoso e resolver um crime."
+                },
             };
 
             let currentWork = null;
