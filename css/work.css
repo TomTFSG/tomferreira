@@ -1,34 +1,71 @@
-.work{
-    position: relative;
-    width: 80%;
-    min-height: 40vh;
-    left: 10%;
-    margin: 10px;
-    background-color: #2f2f2f;
-    color:white;
-    border-radius: 7px;
-    display: flex;
+@media only screen and (orientation: landscape){
+    .work{
+        position: relative;
+        width: 80%;
+        min-height: 40vh;
+        left: 10%;
+        margin: 10px;
+        background-color: #2f2f2f;
+        color:white;
+        border-radius: 7px;
+        display: flex;
+    }
+    .work h1{
+        font-family: 'RobotoMono-Bold', monospace;
+        font-size: 35px;
+        margin-top: 2%;
+    }
+    .work p{
+        font-family: 'RobotoMono-Regular', monospace;
+        font-size: 15px;
+        margin-top: 2%;
+        margin-bottom: 5%;
+    }
+    .work-info{
+        position: relative;
+        width: 55%;
+        left: 45%;
+    }
+    .work-thumb{
+        position: absolute;
+        height: 90%;
+        top: 5%;
+        left: 2%;
+        border-radius: 7px;
+    }
 }
-.work h1{
-    font-family: 'RobotoMono-Bold', monospace;
-    font-size: 35px;
-    margin-top: 2%;
-}
-.work p{
-    font-family: 'RobotoMono-Regular', monospace;
-    font-size: 15px;
-    margin-top: 2%;
-    margin-bottom: 5%;
-}
-.work-info{
-    position: relative;
-    width: 55%;
-    left: 45%;
-}
-.work-thumb{
-    position: absolute;
-    height: 90%;
-    top: 5%;
-    left: 2%;
-    border-radius: 7px;
+
+@media only screen and (orientation: portrait){
+    .work{
+        position: relative;
+        width: 80%;
+        min-height: 30vh;
+        left: 10%;
+        margin: 10px;
+        background-color: #2f2f2f;
+        color:white;
+        border-radius: 7px;
+        display: flex;
+    }
+    .work h1{
+        font-family: 'RobotoMono-Bold', monospace;
+        font-size: 25px;
+        margin-top: 2%;
+    }
+    .work p{
+        display: none;
+    }
+    .work-info{
+        position: relative;
+        width: 100%;
+        left: 0%;
+        text-align: center;
+    }
+    .work-thumb{
+        position: absolute;
+        max-width: 90%;
+        top: 25%;
+        left: 5%;
+        border-radius: 7px;
+    }
 }
