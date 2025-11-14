@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Design and 3D</title>
+    <link href="../css/fonts.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/work.css" rel="stylesheet">
+    <link href="../css/popups.css" rel="stylesheet">
+    <script src="../p5/p5.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo/logo_0.svg" id="logo" alt="Logo"/></a>
+        <a href="anim.html" id="anim"></a>
+        <a href="games.html" id="game"></a>
+        <a href="web.html" id="web"></a>
+        <a href="code.html" id="code"></a>
+        <a href="design.html" id="draw"></a>
+        <a href="../en/anim.html">EN</a>
+    </header>
+    <main>
+        <div class="work work-01">
+            <img src="../img/work/game/work_1.png" alt="Work 1" class="work-thumb">
+            <div class="work-info">
+                <h1>sdf</h1>
+                <p>stfu</p>
+            </div>
+        </div>
+        <div class="popUp" style="visibility: hidden;">
+            <div class="popUp-background"></div>
+            <div class="popUp-content">
+                <div class="close"></div>
+                <img src="../img/work/game/work_1.png" alt="" class="imgPop">
+                <div class="popUp-text">
+                    <p>Work Description goes here jjjjjjjjjjjjjjjjjjjjjjjjjjjjggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</p>
+                    <div class="popUp-info">
+                        <p class="imgCount">1/1</p>
+                    </div>
+                </div>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/tmf_4911/">Instagram</a>
+        <a href="https://www.linkedin.com/in/tom%C3%A1s-ferreira-471933259/">LinkedIn</a>
+        <a href="mailto:tommatiasferreira@gmail.com">Email</a>
+    </footer>
+    <script src="../js/logos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const popUp = document.querySelector(".popUp");
+            const closeBtn = popUp.querySelector(".close");
+            const leftBtn = popUp.querySelector(".left");
+            const rightBtn = popUp.querySelector(".right");
+            const imgCount = popUp.querySelector(".imgCount");
+            const contentContainer = popUp.querySelector(".popUp-content");
+            const textContainer = popUp.querySelector(".popUp-text p");
+
+            const works = {
+                "work-01": {
+                    files: [
+                        "../img/work/anim/work_1/0.png",
+                        "../img/work/anim/work_1/1.mp4"
+                    ],
+                    text: "Text"
+                },
+
+            };
+
+            let currentWork = null;
+            let currentIndex = 0;
+
+            function showMedia(index) {
+                if (!currentWork) return;
+
+                const oldMedia = contentContainer.querySelector(".imgPop, video");
+                if (oldMedia) oldMedia.remove();
+
+                const file = currentWork.files[index];
+                const ext = file.split('.').pop().toLowerCase();
+
+                let mediaEl;
+                if (["mp4", "webm", "mov"].includes(ext)) {
+                    mediaEl = document.createElement("video");
+                    mediaEl.src = file;
+                    mediaEl.classList.add("imgPop");
+                    mediaEl.controls = true;
+                    mediaEl.autoplay = true;
+                } else {
+                    mediaEl = document.createElement("img");
+                    mediaEl.src = file;
+                    mediaEl.classList.add("imgPop");
+                }
+
+                contentContainer.insertBefore(mediaEl, popUp.querySelector(".popUp-text"));
+
+                textContainer.textContent = currentWork.text;
+                imgCount.textContent = `${index + 1}/${currentWork.files.length}`;
+            }
+
+            function openPopup(workKey) {
+                const workData = works[workKey];
+                if (!workData) return;
+
+                currentWork = workData;
+                currentIndex = 0;
+
+                popUp.style.visibility = "visible";
+                showMedia(currentIndex);
+            }
+
+            function closePopup() {
+                const video = contentContainer.querySelector("video");
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                popUp.style.visibility = "hidden";
+                currentWork = null;
+            }
+
+            // ◀️▶️ Navigation
+            function next() {
+                if (!currentWork) return;
+                currentIndex = (currentIndex + 1) % currentWork.files.length;
+                showMedia(currentIndex);
+            }
+
+            function prev() {
+                if (!currentWork) return;
+                currentIndex = (currentIndex - 1 + currentWork.files.length) % currentWork.files.length;
+                showMedia(currentIndex);
+            }
+
+            document.querySelectorAll(".work").forEach(workEl => {
+                workEl.addEventListener("click", () => {
+                    openPopup(workEl.classList[1]); 
+                });
+            });
+
+            closeBtn.addEventListener("click", closePopup);
+            leftBtn.addEventListener("click", prev);
+            rightBtn.addEventListener("click", next);
+        });
+        </script>
+</body>
+</html>

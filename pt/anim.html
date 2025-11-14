@@ -18,7 +18,7 @@
         <a href="web.html" id="web"></a>
         <a href="code.html" id="code"></a>
         <a href="design.html" id="draw"></a>
-        <a href="index.html">EN</a>
+        <a href="../en/anim.html">EN</a>
     </header>
     <main>
         <div class="work work-01">
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="work work-04">
-            <img src="../img/work/anim/work_4.jpg" alt="Work 2" class="work-thumb">
+            <img src="../img/work/anim/work_4.png" alt="Work 2" class="work-thumb">
             <div class="work-info">
                 <h1>The Black Mystery</h1>
                 <p>Adaptação em video do poema  The Black Mystery de Eugen Gomringer</p>
@@ -81,7 +81,6 @@
             const contentContainer = popUp.querySelector(".popUp-content");
             const textContainer = popUp.querySelector(".popUp-text p");
 
-            // 🧩 Define all your works here
             const works = {
                 "work-01": {
                     files: [
@@ -102,7 +101,7 @@
                         "../img/work/anim/work_2/4.mp4",
                         "../img/work/anim/work_2/5.mp4"
                     ],
-                    text: "Este projeto envolveu a criação de uma sequência de animação experimental com foco em iluminação e ritmo."
+                    text: "Esta é uma pequena coleção de estudos de animação criados como testes para praticar."
                 },
                 "work-03": {
                     files: [
@@ -122,11 +121,9 @@
             let currentWork = null;
             let currentIndex = 0;
 
-            // 🖼️ Function to display media (image or video)
             function showMedia(index) {
                 if (!currentWork) return;
 
-                // Remove old media
                 const oldMedia = contentContainer.querySelector(".imgPop, video");
                 if (oldMedia) oldMedia.remove();
 
@@ -146,15 +143,12 @@
                     mediaEl.classList.add("imgPop");
                 }
 
-                // Insert before the text section
                 contentContainer.insertBefore(mediaEl, popUp.querySelector(".popUp-text"));
 
-                // Update description & counter
                 textContainer.textContent = currentWork.text;
                 imgCount.textContent = `${index + 1}/${currentWork.files.length}`;
             }
 
-            // 🔓 Open popup for a specific work
             function openPopup(workKey) {
                 const workData = works[workKey];
                 if (!workData) return;
@@ -166,7 +160,6 @@
                 showMedia(currentIndex);
             }
 
-            // 🔒 Close popup
             function closePopup() {
                 const video = contentContainer.querySelector("video");
                 if (video) {
@@ -177,7 +170,6 @@
                 currentWork = null;
             }
 
-            // ◀️▶️ Navigation
             function next() {
                 if (!currentWork) return;
                 currentIndex = (currentIndex + 1) % currentWork.files.length;
@@ -190,10 +182,9 @@
                 showMedia(currentIndex);
             }
 
-            // 🧠 Event Listeners
             document.querySelectorAll(".work").forEach(workEl => {
                 workEl.addEventListener("click", () => {
-                    openPopup(workEl.classList[1]); // e.g., "work-01"
+                    openPopup(workEl.classList[1]);
                 });
             });
 
