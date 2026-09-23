@@ -9,6 +9,10 @@
         color:white;
         border-radius: 7px;
         display: flex;
+        cursor:pointer;
+    }
+    .work:hover{
+        background-color: #3d3d3d;
     }
     .work h1{
         font-family: 'RobotoMono-Bold', monospace;
