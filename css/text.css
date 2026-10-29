@@ -1,0 +1,254 @@
+/* --- Long-form text page --- */
+
+/* Shared styles */
+main {
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+main h1,
+main h2,
+main h3 {
+    font-family: 'RobotoMono-Bold', monospace;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+main h1 {
+    margin-bottom: 35px;
+}
+
+main h2 {
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+main h3 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-family: 'RobotoMono-Regular', monospace;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    overflow-wrap: break-word;
+}
+
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 35px auto;
+    border-radius: 5px;
+}
+
+main figure {
+    margin: 35px auto;
+    width: 100%;
+}
+
+main figure img {
+    margin: 0 auto;
+}
+
+main figcaption {
+    font-family: 'RobotoMono-Regular', monospace;
+    color: #999;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+main a {
+    color: #b5b5ff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+main a:hover {
+    color: white;
+}
+
+main blockquote {
+    border-left: 3px solid #666;
+    padding-left: 20px;
+    margin: 30px 0;
+    color: #bbb;
+    font-family: 'RobotoMono-Regular', monospace;
+    line-height: 1.8;
+}
+
+main ul,
+main ol {
+    font-family: 'RobotoMono-Regular', monospace;
+    line-height: 1.9;
+    margin: 20px 0 30px 30px;
+}
+
+main li {
+    margin-bottom: 10px;
+}
+
+main hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 45px 0;
+}
+
+.poster-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    width: 60%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.poster-text .poster {
+    flex: 0 0 28%;
+    width: 28%;
+    margin: 0;
+}
+
+.poster-text .poster img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 5px;
+    border:solid 2px white;
+
+}
+
+.poster-text .poster figcaption {
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.poster-text .review-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.poster-text .review-text p {
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+
+/* --- Landscape --- */
+
+@media only screen and (orientation: landscape) {
+    main {
+        min-height: 100vh;
+        padding: 65px 0 100px;
+    }
+
+    main > * {
+        width: 60%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main h1 {
+        font-size: 38px;
+    }
+
+    main h2 {
+        font-size: 27px;
+    }
+
+    main h3 {
+        font-size: 21px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    main figure img {
+        max-width: 100%;
+    }
+
+    main figcaption {
+        font-size: 12px;
+    }
+
+    main blockquote {
+        font-size: 15px;
+    }
+}
+
+
+/* --- Portrait --- */
+
+@media only screen and (orientation: portrait) {
+    main {
+        min-height: 100vh;
+        padding: 35px 0 60px;
+    }
+
+    main > * {
+        width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    main h2 {
+        font-size: 22px;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+
+    main h3 {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    main p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    main img {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    main figcaption {
+        font-size: 11px;
+    }
+
+    main blockquote {
+        font-size: 13px;
+        padding-left: 15px;
+    }
+
+    main ul,
+    main ol {
+        margin-left: 25px;
+        font-size: 14px;
+    }
+
+    .poster-text {
+        width: 88%;
+        gap: 15px;
+    }
+
+    .poster-text .poster {
+        flex-basis: 35%;
+        width: 35%;
+    }
+
+    .poster-text .poster figcaption {
+        font-size: 10px;
+    }
+}
