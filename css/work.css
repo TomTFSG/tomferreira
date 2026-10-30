@@ -1,81 +1,203 @@
-@media only screen and (orientation: landscape){
-    .work{
-        position: relative;
-        width: 80%;
-        min-height: 40vh;
-        left: 10%;
-        margin: 10px;
-        background-color: #2f2f2f;
-        color:white;
-        border-radius: 7px;
-        display: flex;
-        cursor:pointer;
-    }
-    .work:hover{
-        background-color: #3d3d3d;
-    }
-    .work h1{
-        font-family: 'RobotoMono-Bold', monospace;
-        font-size: 35px;
-        margin-top: 2%;
-    }
-    .work{
-        font-family: 'RobotoMono-Regular', monospace;
-        font-size: 15px;
-        margin-top: 2%;
-        margin-bottom: 5%;
-        text-decoration: none;
-    }
-    
-    .work a{
-        text-decoration: none;
-    }
 
-    .work-info{
-        position: relative;
-        width: 55%;
-        left: 45%;
-    }
-    .work-thumb{
-        position: absolute;
-        height: 90%;
-        top: 5%;
-        left: 2%;
-        border-radius: 7px;
+/* =========================
+   WORK CARDS - DEFAULT
+========================= */
+
+.work {
+    position: relative;
+
+    width: 80%;
+    max-width: 1100px;
+    min-height: 280px;
+
+    margin: 25px auto;
+
+    background-color: #2f2f2f;
+    color: white;
+
+    border-radius: 7px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .work:hover {
+        background-color: #3d3d3d;
     }
 }
 
-@media only screen and (orientation: portrait){
-    .work{
-        position: relative;
-        width: 80%;
-        min-height: 30vh;
-        left: 10%;
-        margin: 10px;
-        background-color: #2f2f2f;
-        color:white;
-        border-radius: 7px;
+/* =========================
+   WORK TITLE
+========================= */
+
+.work h1 {
+    font-family: 'RobotoMono-Bold', monospace;
+    font-size: clamp(22px, 3vw, 35px);
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   WORK DESCRIPTION
+========================= */
+
+.work p {
+    font-family: 'RobotoMono-Regular', monospace;
+    font-size: clamp(13px, 1.3vw, 16px);
+    line-height: 1.7;
+}
+
+/* =========================
+   WORK INFORMATION
+========================= */
+
+.work-info {
+    position: relative;
+    margin-left: 45%;
+
+    width: 55%;
+    padding: 25px 5%;
+
+    text-align: left;
+}
+@media screen and (max-width: 600px) {
+    .work-info {
+        margin-left: 0;
+    }
+}
+
+/* =========================
+   WORK IMAGE
+========================= */
+
+.work-thumb {
+    position: absolute;
+
+    width: 40%;
+    height: 90%;
+
+    top: 5%;
+    left: 2%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 7px;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media screen and (max-width: 900px) {
+
+    .work {
+        width: 90%;
+        min-height: 240px;
+        margin: 20px auto;
+    }
+
+    .work-info {
+        width: 55%;
+        padding: 20px 4%;
+    }
+
+    .work-thumb {
+        width: 42%;
+        height: 85%;
+        top: 7.5%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    .work {
+        width: 92%;
+        min-height: unset;
+
+        margin: 18px auto;
+
         display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
-    .work h1{
-        font-family: 'RobotoMono-Bold', monospace;
-        font-size: 25px;
-        margin-top: 2%;
-    }
-    .work p{
-        display: none;
-    }
-    .work-info{
+
+    .work-thumb {
         position: relative;
+
+        display: block;
+
         width: 100%;
-        left: 0%;
-        text-align: center;
+        height: auto;
+        aspect-ratio: 16 / 9;
+
+        top: auto;
+        left: auto;
+
+        object-fit: cover;
+
+        border-radius: 7px 7px 0 0;
     }
-    .work-thumb{
-        position: absolute;
-        max-width: 90%;
-        top: 25%;
-        left: 5%;
-        border-radius: 7px;
+
+    .work-info {
+        position: relative;
+
+        width: 100%;
+        padding: 16px 18px 20px;
+
+        left: auto;
+        text-align: left;
+    }
+
+    .work h1 {
+        font-size: clamp(18px, 5vw, 24px);
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .work p {
+        display: block;
+
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media screen and (max-width: 360px) {
+
+    .work {
+        width: 94%;
+        margin: 14px auto;
+    }
+
+    .work-info {
+        padding: 12px 14px 16px;
+    }
+
+    .work h1 {
+        font-size: 18px;
+    }
+
+    .work p {
+        font-size: 11px;
     }
 }

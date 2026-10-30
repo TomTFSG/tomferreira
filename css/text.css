@@ -1,11 +1,31 @@
-/* --- Long-form text page --- */
 
-/* Shared styles */
+/* =========================
+   LONG-FORM TEXT PAGE
+========================= */
+
+/* Main content */
+
 main {
+    width: 100%;
     color: white;
     background-color: black;
     overflow-x: hidden;
+
+    padding: 65px 0 100px;
 }
+
+/* General content width */
+
+main > * {
+    width: 60%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   HEADINGS
+========================= */
 
 main h1,
 main h2,
@@ -16,52 +36,87 @@ main h3 {
 }
 
 main h1 {
+    font-size: 38px;
     margin-bottom: 35px;
 }
 
 main h2 {
+    font-size: 27px;
     margin-top: 55px;
     margin-bottom: 20px;
 }
 
 main h3 {
+    font-size: 21px;
     margin-top: 35px;
     margin-bottom: 15px;
 }
 
+/* =========================
+   PARAGRAPHS
+========================= */
+
 main p {
     font-family: 'RobotoMono-Regular', monospace;
+    font-size: 15px;
     line-height: 1.9;
     margin-bottom: 25px;
+
     overflow-wrap: break-word;
 }
 
+/* =========================
+   IMAGES
+========================= */
+
 main img {
     display: block;
+
+    width: auto;
     max-width: 100%;
     height: auto;
+
     margin: 35px auto;
+
     border-radius: 5px;
-    border:solid 2px white;
+    border: 2px solid white;
 }
 
+/* =========================
+   FIGURES
+========================= */
+
 main figure {
-    margin: 35px auto;
     width: 100%;
+    margin: 35px auto;
 }
 
 main figure img {
-    margin: 0 auto;
+    max-width: 100%;
     max-height: 500px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 auto;
 }
 
 main figcaption {
     font-family: 'RobotoMono-Regular', monospace;
+    font-size: 12px;
+
     color: #999;
     text-align: center;
     line-height: 1.6;
+
     margin-top: 12px;
 }
+
+/* =========================
+   LINKS
+========================= */
 
 main a {
     color: #b5b5ff;
@@ -73,19 +128,33 @@ main a:hover {
     color: white;
 }
 
+/* =========================
+   BLOCKQUOTES
+========================= */
+
 main blockquote {
     border-left: 3px solid #666;
+
     padding-left: 20px;
     margin: 30px 0;
+
     color: #bbb;
+
     font-family: 'RobotoMono-Regular', monospace;
+    font-size: 15px;
     line-height: 1.8;
 }
+
+/* =========================
+   LISTS
+========================= */
 
 main ul,
 main ol {
     font-family: 'RobotoMono-Regular', monospace;
+    font-size: 15px;
     line-height: 1.9;
+
     margin: 20px 0 30px 30px;
 }
 
@@ -93,40 +162,60 @@ main li {
     margin-bottom: 10px;
 }
 
+/* =========================
+   DIVIDERS
+========================= */
+
 main hr {
     border: none;
     border-top: 1px solid #444;
-    margin: 45px 0;
+
+    margin: 45px auto;
 }
+
+/* =========================
+   POSTER + REVIEW TEXT
+========================= */
 
 .poster-text {
     display: flex;
     align-items: flex-start;
+
     gap: 30px;
+
     width: 60%;
     max-width: 900px;
-    margin: 0 auto;
+
+    margin: 35px auto;
 }
+
+/* Poster */
 
 .poster-text .poster {
     flex: 0 0 28%;
     width: 28%;
+
     margin: 0;
 }
 
 .poster-text .poster img {
+    display: block;
+
     width: 100%;
     height: auto;
-    margin: 0;
-    border-radius: 5px;
-    border:solid 2px white;
 
+    margin: 0;
+
+    border-radius: 5px;
+    border: 2px solid white;
 }
 
 .poster-text .poster figcaption {
     font-size: 11px;
     margin-top: 10px;
 }
+
+/* Review text */
 
 .poster-text .review-text {
     flex: 1;
@@ -138,123 +227,285 @@ main hr {
     margin: 0 0 20px;
 }
 
-.mult-img{
-    display:flex;
+/* =========================
+   MULTIPLE IMAGES
+========================= */
+
+.mult-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    width: 100%;
 }
 
+.mult-img img {
+    flex: 1;
+    min-width: 0;
 
-/* --- Landscape --- */
+    width: 50%;
+    max-width: 50%;
 
-@media only screen and (orientation: landscape) {
+    height: auto;
+    max-height: 500px;
+
+    object-fit: contain;
+
+    margin: 0;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media screen and (max-width: 900px) {
+
     main {
-        min-height: 100vh;
-        padding: 65px 0 100px;
+        padding: 45px 0 75px;
     }
 
     main > * {
-        width: 60%;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 80%;
     }
 
     main h1 {
-        font-size: 38px;
+        font-size: 32px;
     }
 
     main h2 {
-        font-size: 27px;
+        font-size: 25px;
+        margin-top: 45px;
     }
 
     main h3 {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     main p {
-        font-size: 15px;
-    }
-
-    main figure img {
-        max-width: 100%;
-    }
-
-    main figcaption {
-        font-size: 12px;
-    }
-
-    main blockquote {
-        font-size: 15px;
-    }
-}
-
-
-/* --- Portrait --- */
-
-@media only screen and (orientation: portrait) {
-    main {
-        min-height: 100vh;
-        padding: 35px 0 60px;
-    }
-
-    main > * {
-        width: 88%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    main h1 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    main h2 {
-        font-size: 22px;
-        margin-top: 40px;
-        margin-bottom: 15px;
-    }
-
-    main h3 {
-        font-size: 18px;
-        margin-top: 30px;
-    }
-
-    main p {
-        font-size: 14px;
-        line-height: 1.8;
-        margin-bottom: 20px;
-    }
-
-    main img {
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    main figcaption {
-        font-size: 11px;
-    }
-
-    main blockquote {
-        font-size: 13px;
-        padding-left: 15px;
-    }
-
-    main ul,
-    main ol {
-        margin-left: 25px;
         font-size: 14px;
     }
 
     .poster-text {
-        width: 88%;
-        gap: 15px;
+        width: 80%;
+        gap: 20px;
     }
 
     .poster-text .poster {
-        flex-basis: 35%;
-        width: 35%;
+        flex-basis: 32%;
+        width: 32%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    main {
+        padding: 30px 0 50px;
+    }
+
+    /* General content width */
+
+    main > * {
+        width: 90%;
+    }
+
+    /* Headings */
+
+    main h1 {
+        font-size: clamp(24px, 7vw, 30px);
+        margin-bottom: 25px;
+    }
+
+    main h2 {
+        font-size: 23px;
+        margin-top: 40px;
+        margin-bottom: 18px;
+    }
+
+    main h3 {
+        font-size: 18px;
+        margin-top: 28px;
+        margin-bottom: 12px;
+    }
+
+    /* Paragraphs */
+
+    main p {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* Images */
+
+    main img {
+        max-width: 100%;
+        max-height: none;
+
+        margin: 25px auto;
+
+        border-radius: 4px;
+    }
+
+    /* Figures */
+
+    main figure {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    main figure img {
+        width: auto;
+        max-width: 100%;
+        max-height: 65vh;
+
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    main figcaption {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    /* Poster and review layout */
+
+    .poster-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 90%;
+        gap: 20px;
+
+        margin: 30px auto;
+    }
+
+    /* Poster centred above text */
+
+    .poster-text .poster {
+        flex: none;
+
+        width: 65%;
+        max-width: 240px;
+
+        margin: 0 auto;
+    }
+
+    .poster-text .poster img {
+        width: 100%;
+        height: auto;
+
+        margin: 0;
     }
 
     .poster-text .poster figcaption {
         font-size: 10px;
+    }
+
+    /* Review text uses full width */
+
+    .poster-text .review-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .poster-text .review-text p {
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* Multiple images */
+
+    .mult-img {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mult-img img {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: 65vh;
+
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    /* Blockquotes */
+
+    main blockquote {
+        font-size: 12px;
+        padding-left: 14px;
+        margin: 25px 0;
+        line-height: 1.8;
+    }
+
+    /* Lists */
+
+    main ul,
+    main ol {
+        font-size: 13px;
+        line-height: 1.8;
+        margin: 15px 0 25px 22px;
+    }
+
+    main li {
+        margin-bottom: 8px;
+    }
+
+    main hr {
+        margin: 35px auto;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media screen and (max-width: 360px) {
+
+    main {
+        padding-top: 25px;
+    }
+
+    main > * {
+        width: 92%;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    main h2 {
+        font-size: 20px;
+    }
+
+    main h3 {
+        font-size: 17px;
+    }
+
+    main p,
+    .poster-text .review-text p {
+        font-size: 12px;
+    }
+
+    .poster-text {
+        width: 92%;
+        gap: 15px;
+    }
+
+    .poster-text .poster {
+        width: 70%;
+        max-width: 210px;
+    }
+
+    main figure {
+        width: 92%;
     }
 }
