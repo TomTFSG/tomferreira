@@ -19,12 +19,18 @@
         font-size: 35px;
         margin-top: 2%;
     }
-    .work p{
+    .work{
         font-family: 'RobotoMono-Regular', monospace;
         font-size: 15px;
         margin-top: 2%;
         margin-bottom: 5%;
+        text-decoration: none;
     }
+    
+    .work a{
+        text-decoration: none;
+    }
+
     .work-info{
         position: relative;
         width: 55%;
