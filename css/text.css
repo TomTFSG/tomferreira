@@ -255,9 +255,13 @@ main hr {
     margin: 0;
 }
 
-/* =========================
-   TABLETS
-========================= */
+.spoilerWarning {
+    font-family: 'RobotoMono-Bold', monospace;
+    font-size: 80px;
+    color: #ff2222;
+    text-align: center;
+    margin-top: 30px;
+}
 
 @media screen and (max-width: 900px) {
 
